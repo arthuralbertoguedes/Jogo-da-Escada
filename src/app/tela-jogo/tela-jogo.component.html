@@ -1,0 +1,79 @@
+<section class="telaJogo">
+      <div class="campoJogo">
+            <div class="LadoEsquerdoTabuleiro ultimaDiv primeiraDiv">
+                  <div class="casaEsquerda primeiraDiv">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==10">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==9">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==8">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==7">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==6">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==5">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==4">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==3">
+                  </div>
+                  <div class="casaEsquerda">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==2">
+                  </div>
+                  <div class="casaEsquerda ultimaDiv">
+                        <img src="../../assets/rato2.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador2==1">
+                  </div>
+
+            </div>
+            
+           <div class="ladoDireitoTabuleiro ultimaDiv primeiraDiv">
+                  <div class="casaDireita primeiraDiv">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==10">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==9">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==8">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==7">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==6">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==5">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==4">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==3">
+                  </div>
+                  <div class="casaDireita">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==2">
+                  </div>
+                  <div class="casaDireita ultimaDiv">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRato" *ngIf="posicaoAtualJogador1==1">
+                  </div>
+           </div>
+
+      </div>
+
+      <button (click)="jogar(botaoSortear)" #botaoSortear *ngIf="botaoHabilitado" class="botaoSortear">Sortear dados</button>
+      <div>
+            <div class="numeroSorteado">
+                  <span id="numeroAtual" >{{numeroSorteado}}</span>
+            </div>
+
+      </div>
+</section>
