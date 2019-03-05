@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body,html{
@@ -16,9 +17,21 @@ body,html{
     animation: up 1.5s;
 }
 
+.imagemQueijo{
+    height: 100%;
+    width: 50%;
+    transition: all 1s;
+    animation: down 2s;
+}
+
+.imagemBuraco{
+    height: 100%;
+    width: 50%;
+}
+
 .telaJogo{
-    padding-top: 30px;
-    background: url("../../appJogo/src/assets/fundo.jpeg");
+    
+    background: url("../src/assets/fundo.jpeg");
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -26,39 +39,74 @@ body,html{
 
 .campoJogo{
     margin-left: 30px;
+    margin-right: 0 !important;
     transition: all 1s;
-    background-color: transparent;
+   /* background-color: brown;*/
+    background: url("../src/assets/rocks.jpeg");
+    background-size: 200%;
     height: 80%;
     width: 40%;
+    float: left;
+}
+
+.chaoJogo{
+    height: 15%;
+    width: 100%;
+    
+    clear: both;
+    background: url("../src/assets/rocks.jpeg");
+    background-size: 100%;
+}
+.topoJogo{
+    height: 5%;
+    width: 100%;
+    box-shadow: 2px 2px 3px 1px rgba(204, 204, 204, 0.247);
+    clear: both;
+    background: url("../src/assets/rocks.jpeg");
+    background-size: 100%;
+}
+.jogoInformacoes{
+    display: inline-block;
+    height: 80%;
+    width: 50%;
+    
+    float: right;
+    padding: 10px;
+    text-align: center;
 }
 
 .casaEsquerda{
     height: 10%;
     width: 100%;
-    border: 4px solid rgb(75, 49, 49);
-    text-align: center;
+    border: 1px solid #999;
     
+    text-align: center;
+    box-shadow: -4px 0px 0px 0px rgba(221, 221, 221, 0.137); 
     font-size: 170%;
+    
 }
 
 
+#casaEsquerda1{
+   /* animation: piscarBorda 1s 3; */
+}
 .casaDireita{
     height: 10%;
     width: 100%;
-    border: 4px solid rgb(75, 49, 49);
+   border: 1px solid #999;
     text-align: center;
     font-size: 170%;
     transition: all 1s;
 }
 .LadoEsquerdoTabuleiro{
-    border:1px solid rgb(75, 49, 49);;
+   
     height: 100%;
     width: 50%;
     float: left;
 }
 .ladoDireitoTabuleiro{
     display: inline;
-    border:1px solid rgb(75, 49, 49);;
+   
     height: 100%;
     width: 50%;
     float: right;
@@ -72,22 +120,37 @@ body,html{
     border-top: transparent;
 }
 .numeroSorteado{
-    font-size: 200%;
+    font-size: 300%;
     color: red;
+    
     font-weight: 800;
     text-shadow: 2px 2px blueviolet;
+
 }
 
-
-/*Animações*/
-@keyframes up{
-    0%{
-        
-        transform: translate(0, 50px);
-    }
+.mensagemJogo{
     
-    100%{
-        
-    }
+    animation: cair 1s;
    
+}       
+
+.color{
+    color: rgb(235, 48, 48) !important;
+    text-shadow: 2px 2px rgba(137, 43, 226, 0.788);
+    font-weight: 900;
+    font-family: Jelly;
+    font-size: 60%;
+    color: white;
+    line-height: 30px;
+}
+
+.vezJogador{
+    color: red;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@font-face{
+    src: url("../src/assets/fonts/Jelly.ttf");
+    font-family: Jelly;
 }

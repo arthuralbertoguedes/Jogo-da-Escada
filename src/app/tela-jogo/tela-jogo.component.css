@@ -1,7 +1,41 @@
 .botaoSortear{
     animation: fadeIn 2s !important;
     transition: 1s;
+    border-radius: 100%;
+    font-size: 100%;
+    padding: 15%;
+    background: linear-gradient(to right top, blue, red);
+    color: white;
+    
+    
 }
+
+.imagemQueijo{
+    animation: girar 1s infinite;
+}
+
+/*Animações*/
+@keyframes up{
+    0%{
+        
+        transform: translate(0, 50px);
+    }
+    
+    100%{
+        
+    }
+   
+}
+
+@keyframes down{
+
+    0%{
+        transform: translate(0, -100px)
+    }
+
+
+}
+
 
 
 @keyframes fadeIn{
@@ -11,5 +45,36 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes girar{
+    0%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}   
+
+@keyframes cair{
+    0%{
+       
+        transform: translate(200px, 0);
+    }
+}
+
+@keyframes piscarBorda{
+    0%{
+        border: 2px solid red;
+    }
+    50%{
+        border: 2px solid rgb(194, 127, 127);
+    }
+    100%{
+        border: 2px solid red;
     }
 }
