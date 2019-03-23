@@ -10,6 +10,10 @@ body,html{
     height: 100%;
 }
 
+p{
+    font-family: Blueberry;
+    font-size: 15px;
+}
 .imagemRato{
     height: 100%;
     width: 50%;
@@ -30,7 +34,6 @@ body,html{
 }
 
 .telaJogo{
-    
     background: url("../src/assets/fundo.jpeg");
     background-size: cover;
     height: 100%;
@@ -41,7 +44,6 @@ body,html{
     margin-left: 30px;
     margin-right: 0 !important;
     transition: all 1s;
-   /* background-color: brown;*/
     background: url("../src/assets/rocks.jpeg");
     background-size: 200%;
     height: 80%;
@@ -52,7 +54,6 @@ body,html{
 .chaoJogo{
     height: 15%;
     width: 100%;
-    
     clear: both;
     background: url("../src/assets/rocks.jpeg");
     background-size: 100%;
@@ -69,7 +70,6 @@ body,html{
     display: inline-block;
     height: 80%;
     width: 50%;
-    
     float: right;
     padding: 10px;
     text-align: center;
@@ -79,17 +79,11 @@ body,html{
     height: 10%;
     width: 100%;
     border: 1px solid #999;
-    
     text-align: center;
     box-shadow: -4px 0px 0px 0px rgba(221, 221, 221, 0.137); 
     font-size: 170%;
-    
 }
 
-
-#casaEsquerda1{
-   /* animation: piscarBorda 1s 3; */
-}
 .casaDireita{
     height: 10%;
     width: 100%;
@@ -98,19 +92,16 @@ body,html{
     font-size: 170%;
     transition: all 1s;
 }
-.LadoEsquerdoTabuleiro{
-   
+.LadoEsquerdoTabuleiro{ 
     height: 100%;
     width: 50%;
     float: left;
 }
 .ladoDireitoTabuleiro{
-    display: inline;
-   
+    display: inline; 
     height: 100%;
     width: 50%;
     float: right;
-    
 }
 
 .ultimaDiv{
@@ -122,16 +113,12 @@ body,html{
 .numeroSorteado{
     font-size: 300%;
     color: red;
-    
     font-weight: 800;
     text-shadow: 2px 2px blueviolet;
-
 }
 
 .mensagemJogo{
-    
     animation: cair 1s;
-   
 }       
 
 .color{
@@ -144,13 +131,62 @@ body,html{
     line-height: 30px;
 }
 
-.vezJogador{
-    color: red;
-    
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/*Configurações da tela fim de jogo */
+
+.fimDeJogo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../src/assets/fundo.jpeg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.fimDeJogoMensagem{
+    background: url("../src/assets/rocks.jpeg");
+    padding: 10px 15px 70px 15px;
+    width: 75%;
+    margin: 70px auto;
+    z-index: 9999;
+    border-radius: 15px;
+    box-shadow: -2px -2px 15px 1px #333;
+}   
+
+.imagemRatoFinalJogo{
+    height: 80px;
+    width: 70px;
+    margin-bottom: 30px;
+}
+
+.btnFinalJogo{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    color: rgb(235, 48, 48) !important;
+    text-shadow: 1px 1px #222;
+    font-weight: 900;
+    font-family: Jelly;
+    font-size: 22px;
+
+}
+
+.paragrafoFimDeJogo{
+    color: white;
+    text-shadow: 1px 2px #222;
+    font-size: 18px;
+    font-family: Blueberry;
 }
 
 @font-face{
     src: url("../src/assets/fonts/Jelly.ttf");
     font-family: Jelly;
+}
+
+@font-face{
+    src: url("../src/assets/fonts/Blueberry.otf");
+    font-family: Blueberry;
 }

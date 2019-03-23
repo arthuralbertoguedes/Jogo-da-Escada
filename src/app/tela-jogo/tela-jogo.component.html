@@ -76,18 +76,18 @@
             
             <div style="height: 50%">
                   <div class="mensagemJogo color" *ngIf="voltarInicio">
-                        <p>VOCE CAIU NO BURACO ...</p>
-                        <p>VOLTE AO INICIO</p>
+                        <p class="paragrafoFimDeJogo">VOCE CAIU NO BURACO</p>
+                        <p class="paragrafoFimDeJogo">VOLTE AO INICIO</p>
                   </div>
                   <div class="mensagemJogo color" *ngIf="jogarNovamente" style="margin-top: 20%">
-                        <p>JOGUE NOVAMENTE</p>
+                        <p class="paragrafoFimDeJogo">JOGUE NOVAMENTE</p>
                   </div>
             </div>
 
 
             <div style="height: 50%">
                   <div>
-                        <p class="vezJogador"> Vez do {{ ratoVezJogada }}</p>
+                        <p class="paragrafoFimDeJogo"> Vez do {{ ratoVezJogada }}</p>
                   </div>
                   <div class="numeroSorteado">
                         <span id="numeroAtual" >{{numeroSorteado}}</span>
@@ -96,7 +96,29 @@
             </div>
 
       </div>
-      <div class="chaoJogo">
-
+      <div class="chaoJogo"></div>
+            
+      <div class="fimDeJogo" *ngIf="fimDeJogo">
+            <div class="fimDeJogoMensagem">
+                  <div *ngIf="vencedor=='rato1'; else rato2Vencedor">
+                        <img src="../../assets/rato1.png" alt="" class="imagemRatoFinalJogo">
+                  </div>
+                  <ng-template #rato2Vencedor>
+                        <img src="../../assets/rato2.png" alt="" class="imagemRatoFinalJogo">
+                  </ng-template>
+                  <div *ngIf="primeiraVezJogar==false; else primeiroJogo">
+                        <p class="paragrafoFimDeJogo">O {{ vencedor }} venceu !!!</p>
+                        <p class="paragrafoFimDeJogo">Deseja jogar novamente ?</p>
+                        <button class="btnFinalJogo" (click)="comecarJogo()">Jogar novamente</button>
+                  </div>
+                  <ng-template #primeiroJogo>
+                        <div>
+                              <p class="paragrafoFimDeJogo">Tente atravessar o rio e pegar o queijo primeiro que seu adversario</p>
+                              <p class="paragrafoFimDeJogo">Cuidado com os buracos no caminho !!</p>
+                              <button class="btnFinalJogo" (click)="comecarJogo()">Começar</button>
+                        </div>
+                  </ng-template>
+            </div>
       </div>
+
 </section>

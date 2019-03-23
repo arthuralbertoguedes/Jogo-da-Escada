@@ -10,25 +10,41 @@ export class TelaJogoComponent implements OnInit {
 
       public posicaoAtualJogador1 : number = 1;
       public posicaoAtualJogador2 : number = 1;
-      public numeroSorteado : any = "0";
-      public vezJogador : number;
-      public botaoHabilitado : boolean;
-      public buracos : string[] = ['4','6','7','9'];
-      public voltarInicio : boolean;
-      public jogarNovamente : boolean;
-      public ratoVezJogada : string;
-
+      public numeroSorteado       : any = "0";
+      public vezJogador           : number;
+      public botaoHabilitado      : boolean;
+      public buracos              : string[] = ['4','6','7','9'];
+      public voltarInicio         : boolean;
+      public jogarNovamente       : boolean;
+      public ratoVezJogada        : string;
+      public vencedor             : string;
+      public fimDeJogo            : boolean
+      public primeiraVezJogar     : boolean;
+      
       constructor() {
-          this.vezJogador = 1;
-          this.botaoHabilitado = true;
-          this.voltarInicio = false;
-          this.jogarNovamente = false;
-          this.ratoVezJogada = 'Rato branco';
+            this.primeiraVezJogar = true;
+            this.vezJogador       = 1;
+            this.botaoHabilitado  = true;
+            this.voltarInicio     = false;
+            this.jogarNovamente   = false;
+            this.ratoVezJogada    = 'Rato branco';
+            this.vencedor         = "";
+            this.fimDeJogo        = true;
       }
 
-      ngOnInit() {
-          
-      
+      ngOnInit() {}
+
+      comecarJogo(){
+            this.vezJogador       = 1;
+            this.botaoHabilitado  = true;
+            this.voltarInicio     = false;
+            this.jogarNovamente   = false;
+            this.ratoVezJogada    = 'Rato branco';
+            this.vencedor         = "";
+            this.fimDeJogo        = false;
+            this.posicaoAtualJogador1 = 1;
+            this.posicaoAtualJogador2 = 1;
+            this.numeroSorteado = 0;
       }
 
 
@@ -81,23 +97,25 @@ export class TelaJogoComponent implements OnInit {
           clearInterval(intervalo);
 
           if(this.vezJogador==1){
-
+                //Verifica se ganhou
                 if(this.posicaoAtualJogador1 + this.numeroSorteado >= 10){
-                    alert('Voce ganhou!!');
+                    this.fimDeJogo = true;
+                    this.vencedor = "rato1";
+                    this.primeiraVezJogar = false;
                 }
 
                 //Verifica se o jogador vai cair num buraco
+                //Verifica se existe buraco na proxima movimentação do jogador
                if(this.buracos.indexOf(String(this.posicaoAtualJogador1 + this.numeroSorteado))>-1){
+                    //Pegando casa do buraco para animação
                     let posicaoBuraco1 = this.posicaoAtualJogador1 + this.numeroSorteado;
-                    
                     let divBuraco = document.getElementById(`casaDireita${posicaoBuraco1}`);
                     divBuraco.style.animation = "piscarBorda 1.5s 3";
                     setTimeout(()=>{
                         divBuraco.style.animation = "none";
                     },4000)
-                   
-                    
-                    
+              
+                    //Voltando jogador ao início
                     this.posicaoAtualJogador1=1;
                     this.voltarInicio = true;
                     this.novaRodada();
@@ -119,6 +137,13 @@ export class TelaJogoComponent implements OnInit {
                
           }
           else{
+                if(this.posicaoAtualJogador2 + this.numeroSorteado >= 10){
+                    this.fimDeJogo = true;
+                    this.vencedor = "rato2";
+                    this.primeiraVezJogar = false;
+                }
+
+
                 //Verifica se o jogador vai cair num buraco
                 if(this.buracos.indexOf(String(this.posicaoAtualJogador2 + this.numeroSorteado))>-1){
 
@@ -151,8 +176,5 @@ export class TelaJogoComponent implements OnInit {
           
          }  
     }
-
-
-
 
 }
